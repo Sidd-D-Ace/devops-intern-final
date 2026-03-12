@@ -10,6 +10,9 @@ This repository demonstrates a complete, small-scale DevOps workflow. It integra
 * `scripts/`: Contains Linux system administration scripts.
 * `Dockerfile`: Containerization instructions for the Python application.
 * `.github/workflows/`: CI/CD pipeline configuration.
+* `nomad/`: Infrastructure as Code (IaC) for Nomad deployment.
+* `monitoring/`: Documentation and setup instructions for Grafana Loki.
+* `mlflow/`: Extra credit MLOps tracking setup.
 
 ## How to Run
 

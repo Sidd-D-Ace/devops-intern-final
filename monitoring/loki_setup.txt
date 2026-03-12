@@ -1,0 +1,20 @@
+Grafana Loki Setup & Logging Documentation
+
+1. Starting Loki Locally
+I utilized Docker to spin up a local instance of Grafana Loki for log aggregation.
+Command used:
+docker run -d --name loki -p 3100:3100 grafana/loki:latest
+
+2. Verifying the Service
+To ensure Loki was running and accepting connections, I pinged the ready endpoint:
+curl http://localhost:3100/ready
+
+3. Forwarding Logs (Docker to Loki)
+To forward container logs to Loki, the Docker daemon needs the Loki logging driver.
+Run a container with the driver attached:
+docker run --log-driver=loki --log-opt loki-url="http://localhost:3100/loki/api/v1/push" devops-hello
+
+4. Viewing Logs
+Logs can be queried via Grafana or directly using LogQL through the Loki API.
+Example query command:
+curl -G -s "http://localhost:3100/loki/api/v1/query" --data-urlencode 'query={container_name="devops-hello"}'
