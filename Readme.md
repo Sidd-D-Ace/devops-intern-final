@@ -5,3 +5,10 @@
 
 ## Project Overview
 This repository demonstrates a complete, small-scale DevOps workflow. It integrates Linux scripting, Docker containerization, continuous integration using GitHub Actions, job orchestration using HashiCorp Nomad, and log monitoring with Grafana Loki.
+
+## How to Run
+
+1. **Test Locally:** `python hello.py`
+2. **Run System Info Script:** `./scripts/sysinfo.sh`
+3. **Build Docker Image:** `docker build -t devops-hello .`
+4. **Run Docker Container:** `docker run devops-hello`
